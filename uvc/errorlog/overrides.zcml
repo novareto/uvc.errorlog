@@ -1,0 +1,12 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:grok="http://namespaces.zope.org/grok">
+    <include package="z3c.unconfigure" file="meta.zcml" />
+    <unconfigure>
+      <subscriber
+          handler="zope.app.appsetup.errorlog.bootStrapSubscriber"
+          for="zope.processlifetime.IDatabaseOpenedWithRoot"
+          />
+    </unconfigure>
+  <grok:grok package="." />
+</configure>
+
