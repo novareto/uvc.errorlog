@@ -25,6 +25,7 @@ setup(name='uvc.errorlog',
           'setuptools',
           'grokcore.error',
           'z3c.unconfigure',
+          'graypy',
       ],
       entry_points={
          'z3c.autoinclude.plugin': 'target=uvcsite',
