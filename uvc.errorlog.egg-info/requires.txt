@@ -1,4 +1,0 @@
-setuptools
-grokcore.error
-z3c.unconfigure
-graypy
