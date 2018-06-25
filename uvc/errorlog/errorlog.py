@@ -17,11 +17,13 @@ def _make_extra(request=None):
         return None
     host = request.getHeader(
         'HTTP_X_FORWARDED_FOR', request.getHeader('REMOTE_ADDR'))
+    principal = request.principal
+    auth = principal and principal.id or '',
     extra_data = {
         'url': request.getURL(),
         'method': request.method,
         'host': host,
-        'auth': request.principal.id,
+        'auth': auth,
         'program': 'grok',
         'customer': os.environ.get('CUSTOMER', 'NN'),
         'timestamp': datetime.datetime.now().isoformat() 
